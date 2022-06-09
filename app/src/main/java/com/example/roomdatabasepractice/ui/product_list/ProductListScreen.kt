@@ -2,7 +2,7 @@ package com.example.roomdatabasepractice.ui.product_list
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -57,7 +57,7 @@ fun ProductListScreen(
                     .height(IntrinsicSize.Min),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     TextField(
                         value = viewModel.name,
                         onValueChange = {viewModel.onEvent(ProductListEvent.OnNameChanged(it))},
@@ -66,14 +66,12 @@ fun ProductListScreen(
                     TextField(
                         value = viewModel.description,
                         onValueChange = {viewModel.onEvent(ProductListEvent.OnDescriptionChanged(it))},
-                        label = { Text(text = "Description") },
-                        modifier = Modifier.padding(PaddingValues(top = 8.dp))
+                        label = { Text(text = "Description") }
                     )
                     TextField(
                         value = viewModel.type,
                         onValueChange = {viewModel.onEvent(ProductListEvent.OnTypeChanged(it))},
-                        label = { Text(text = "Type") },
-                        modifier = Modifier.padding(PaddingValues(top = 8.dp))
+                        label = { Text(text = "Type") }
                     )
                 }
                 Spacer(modifier = Modifier.width(8.dp))
@@ -113,11 +111,11 @@ fun ProductListScreen(
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(1f),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                itemsIndexed (productList.value) { index, product ->
+                items (productList.value) { product ->
                     ProductListCard(
-                        index = index,
                         product = product,
                         onClickUpdateProductButton = {
                             viewModel.onEvent(ProductListEvent.OnClickUpdateProductButton(product))
@@ -134,15 +132,10 @@ fun ProductListScreen(
 
 @Composable
 fun ProductListCard(
-    index: Int,
     product: Product,
     onClickUpdateProductButton: () -> Unit,
     onClickDeleteProductButton: () -> Unit,
 ) {
-    if (index > 0) {
-        Spacer(modifier = Modifier.height(8.dp))
-    }
-
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(8.dp),
