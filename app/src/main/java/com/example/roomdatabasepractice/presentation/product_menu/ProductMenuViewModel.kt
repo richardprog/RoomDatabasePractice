@@ -1,9 +1,9 @@
-package com.example.roomdatabasepractice.ui.home_menu
+package com.example.roomdatabasepractice.presentation.product_menu
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.roomdatabasepractice.ui.navigation.Screen
-import com.example.roomdatabasepractice.util.UiEvent
+import com.example.roomdatabasepractice.presentation.Screen
+import com.example.roomdatabasepractice.presentation.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -11,17 +11,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeMenuViewModel @Inject constructor() : ViewModel() {
+class ProductMenuViewModel @Inject constructor() : ViewModel() {
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onEvent(event : HomeMenuEvent) {
+    fun onEvent(event : ProductMenuEvent) {
         when (event) {
-            is HomeMenuEvent.OnClickProductMenuButton -> {
-                sendUiEvent(UiEvent.Navigate(Screen.ProductMainScreen.route))
-            }
-            is HomeMenuEvent.OnClickOwnerMenuButton -> {
-                sendUiEvent(UiEvent.Navigate(Screen.OwnerMainScreen.route))
+            is ProductMenuEvent.OnClickProductListButton -> {
+                sendUiEvent(UiEvent.Navigate(Screen.ProductListScreen.route))
             }
         }
     }

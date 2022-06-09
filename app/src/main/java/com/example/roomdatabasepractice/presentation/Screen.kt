@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.navigation
+package com.example.roomdatabasepractice.presentation
 
 sealed class Screen(val route : String) {
     object HomeMainScreen : Screen("home_main_screen")

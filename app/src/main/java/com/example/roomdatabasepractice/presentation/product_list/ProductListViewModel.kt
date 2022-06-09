@@ -1,15 +1,13 @@
-package com.example.roomdatabasepractice.ui.product_list
+package com.example.roomdatabasepractice.presentation.product_list
 
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomdatabasepractice.data.entity.Product
 import com.example.roomdatabasepractice.data.repository.ProductRepository
-import com.example.roomdatabasepractice.util.UiEvent
+import com.example.roomdatabasepractice.presentation.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -57,7 +55,8 @@ class ProductListViewModel @Inject constructor(
                     name = ""
                     description = ""
                     type = ""
-                    sendUiEvent(UiEvent.ShowSnackbar(
+                    sendUiEvent(
+                        UiEvent.ShowSnackbar(
                         message = "New product has been inserted"
                     ))
                 }
@@ -66,7 +65,8 @@ class ProductListViewModel @Inject constructor(
                 viewModelScope.launch {
                     repository.deleteAllProducts()
                     productList = repository.getAllProducts()
-                    sendUiEvent(UiEvent.ShowSnackbar(
+                    sendUiEvent(
+                        UiEvent.ShowSnackbar(
                         message = "All products have been deleted"
                     ))
                 }
@@ -82,7 +82,8 @@ class ProductListViewModel @Inject constructor(
                     name = ""
                     description = ""
                     type = ""
-                    sendUiEvent(UiEvent.ShowSnackbar(
+                    sendUiEvent(
+                        UiEvent.ShowSnackbar(
                         message = "Selected product has been updated with new details"
                     ))
                 }
@@ -91,7 +92,8 @@ class ProductListViewModel @Inject constructor(
                 viewModelScope.launch {
                     repository.deleteProduct(event.product)
                     productList = repository.getAllProducts()
-                    sendUiEvent(UiEvent.ShowSnackbar(
+                    sendUiEvent(
+                        UiEvent.ShowSnackbar(
                         message = "Selected product has been deleted"
                     ))
                 }

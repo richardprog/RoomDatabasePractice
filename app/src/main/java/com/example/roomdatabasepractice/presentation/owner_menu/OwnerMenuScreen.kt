@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.owner_menu
+package com.example.roomdatabasepractice.presentation.ui.owner_menu
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.roomdatabasepractice.util.UiEvent
+import com.example.roomdatabasepractice.presentation.UiEvent
 
 @Composable
 fun OwnerMenuScreen(

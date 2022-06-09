@@ -1,11 +1,11 @@
-package com.example.roomdatabasepractice.ui.navigation.navgraph
+package com.example.roomdatabasepractice.presentation.ui.navigation.navgraph
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.roomdatabasepractice.ui.home_menu.HomeMenuScreen
-import com.example.roomdatabasepractice.ui.navigation.Screen
+import com.example.roomdatabasepractice.presentation.home_menu.HomeMenuScreen
+import com.example.roomdatabasepractice.presentation.Screen
 
 @Composable
 fun MainNavGraph(navController: NavHostController) {

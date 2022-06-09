@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.home_menu
+package com.example.roomdatabasepractice.presentation.product_menu
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -9,12 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.roomdatabasepractice.util.UiEvent
+import com.example.roomdatabasepractice.presentation.UiEvent
 
 @Composable
-fun HomeMenuScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
-    viewModel: HomeMenuViewModel = hiltViewModel()
+fun ProductMenuScreen(
+    onNavigate : (UiEvent.Navigate) -> Unit,
+    viewModel : ProductMenuViewModel = hiltViewModel()
 ) {
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
@@ -34,19 +34,11 @@ fun HomeMenuScreen(
         ) {
             Button(
                 onClick = {
-                    viewModel.onEvent(HomeMenuEvent.OnClickProductMenuButton)
+                    viewModel.onEvent(ProductMenuEvent.OnClickProductListButton)
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Product")
-            }
-            Button(
-                onClick = {
-                    viewModel.onEvent(HomeMenuEvent.OnClickOwnerMenuButton)
-                },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Owner")
+                Text(text = "Product List")
             }
         }
     }

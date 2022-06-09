@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.util
+package com.example.roomdatabasepractice.presentation
 
 sealed class UiEvent {
     object PopBackStack: UiEvent()

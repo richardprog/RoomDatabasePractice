@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.product_menu
+package com.example.roomdatabasepractice.presentation.product_menu
 
 sealed class ProductMenuEvent {
     object OnClickProductListButton : ProductMenuEvent()

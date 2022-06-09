@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.theme
+package com.example.roomdatabasepractice.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

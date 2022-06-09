@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.product_list
+package com.example.roomdatabasepractice.presentation.product_list
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.roomdatabasepractice.data.entity.Product
-import com.example.roomdatabasepractice.util.UiEvent
+import com.example.roomdatabasepractice.presentation.UiEvent
 
 @Composable
 fun ProductListScreen(

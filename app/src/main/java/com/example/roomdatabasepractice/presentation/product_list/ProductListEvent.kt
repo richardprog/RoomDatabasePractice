@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.product_list
+package com.example.roomdatabasepractice.presentation.product_list
 
 import com.example.roomdatabasepractice.data.entity.Product
 

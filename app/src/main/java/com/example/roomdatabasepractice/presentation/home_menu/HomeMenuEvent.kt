@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.home_menu
+package com.example.roomdatabasepractice.presentation.home_menu
 
 sealed class HomeMenuEvent {
     object OnClickProductMenuButton : HomeMenuEvent()

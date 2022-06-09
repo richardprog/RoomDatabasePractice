@@ -1,4 +1,4 @@
-package com.example.roomdatabasepractice.ui.theme
+package com.example.roomdatabasepractice.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
